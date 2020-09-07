@@ -37,7 +37,9 @@ def predict_video_file():
             description: The output values
     '''
     model = load_model("trainedmodelsh5/deploytestnudity.h5")
-    frames=preprocess_one_video(request.files['file'])
+    vid = request.files['file']
+    vid.save('videofile.mp4')
+    frames=preprocess_one_video('videofile.mp4')
     preds = []
     for frame in frames:
         prediction = model.predict(frame.reshape((1, 124, 124, 3)))
