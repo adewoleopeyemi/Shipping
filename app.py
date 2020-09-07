@@ -6,6 +6,7 @@ Created on Fri Sep  4 04:07:24 2020
 """
 
 from flask import Flask, request
+import os
 import numpy as np
 import flasgger
 from flasgger import Swagger
