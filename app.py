@@ -6,9 +6,7 @@ Created on Fri Sep  4 04:07:24 2020
 """
 
 from flask import Flask, request
-import pandas as pd
 import numpy as np
-import pickle
 import flasgger
 from flasgger import Swagger
 import tensorflow as tf
