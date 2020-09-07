@@ -37,11 +37,11 @@ def predict_video_file():
             description: The output values
     '''
     model = load_model("trainedmodelsh5/deploytestnudity.h5")
-    frames=preprocess_one_video(request.files.get('file'))
+    frames=preprocess_one_video(request.files.['file'])
     preds = []
     for frame in frames:
         prediction = model.predict(frame.reshape((1, 124, 124, 3)))
-        if prediction < 0.5:
+        if prediction > 0.5:
             a=1
             preds.append(a)
         else:
@@ -73,7 +73,7 @@ def predict_image_file():
     model = load_model("trainedmodelsh5/deploytestnudity.h5")
     img = preprocess_one_image(request.files['file'])
     prediction = model.predict(img.reshape((1, 124, 124, 3)))
-    if prediction < 0.5:
+    if prediction >0.5:
         return 'The uploaded image contains nude contents and is not allowed'
     else:
         return "The uploaded image doesn't contain any form of nudity you look good to go"
