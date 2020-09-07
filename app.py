@@ -21,8 +21,8 @@ Swagger(app)
 port = int(os.environ.get('PORT', 5000))
 
 
-@app.route('/predict_image_file', methods=['POST'])
-def predict_image_file():
+@app.route('/predict_video_file', methods=['POST'])
+def predict_video_file():
     '''Let's predict if nude content
     This is using docstrings for specifications.
     ---
@@ -55,8 +55,8 @@ def predict_image_file():
     return "There are %i nude frames in this video, please take them down"%i
 
 
-@app.route('/predict_video_file', methods=['POST'])
-def predict_video_file():
+@app.route('/predict_image_file', methods=['POST'])
+def predict_image_file():
     '''Let's predict if nude content
     This is using docstrings for specifications.
     ---
