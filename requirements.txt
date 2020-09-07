@@ -9,5 +9,5 @@ scipy>=0.15.1
 flasgger
 tensorflow
 keras
-opencv-python
+opencv-contrib-python
 Pillow
