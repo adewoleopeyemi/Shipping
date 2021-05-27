@@ -76,7 +76,7 @@ def predict_image_file():
     img = preprocess_one_image(request.files['file'])
     prediction = model.predict(img.reshape((1, 124, 124, 3)))
     if prediction >0.98:
-        return prediction
+        return "Nudity detected with percentage confidence of " + str(prediction)
     else:
         return "The uploaded image doesn't contain any form of nudity you look good to go"
 
