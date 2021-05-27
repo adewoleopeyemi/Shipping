@@ -75,7 +75,7 @@ def predict_image_file():
     model = load_model("trainedmodelsh5/deploytestnudity.h5")
     img = preprocess_one_image(request.files['file'])
     prediction = model.predict(img.reshape((1, 124, 124, 3)))
-    if prediction >0.70:
+    if prediction >0.75:
         return 'The uploaded image contains nude contents and is not allowed'
     else:
         return "The uploaded image doesn't contain any form of nudity you look good to go"
