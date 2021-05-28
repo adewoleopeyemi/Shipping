@@ -72,7 +72,7 @@ def predict_image_file():
         200:
             description: The output values
     '''
-    model = load_model("trainedmodelsh5/vggnuditymodel (1).h5")
+    model = load_model("trainedmodelsh5/deploytestnudity.h5")
     img = preprocess_one_image(request.files['file'])
     prediction = model.predict(img.reshape((1, 124, 124, 3)))
     if prediction <= 0.95:
